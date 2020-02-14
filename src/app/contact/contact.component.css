@@ -1,0 +1,15 @@
+.padding30 {
+    padding: 20px 100px;
+}
+.inputBox {
+    flex:1
+}
+
+.widthInput{ 
+    width: 250px
+}
+
+.middle{
+    text-align: center;
+    justify-content: center
+}

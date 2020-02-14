@@ -1,0 +1,41 @@
+<h1 style="text-align:center">Welcome {{userName}}</h1>
+<div class="row justify-content-sm-center">
+  <div class = "padding30">
+    <span>User Name</span><br>
+    <input type="text" class= "widthInput" placeholder="Enter your name" (input)="name = $event.target.value" value={{name}}><br>
+    <p></p>
+    
+    <span>Phone Number</span><br>
+    <input type="text" class= "widthInput" placeholder="Enter your phone number" (input)="phoneNumber = $event.target.value" value={{phoneNumber}}><br>
+    <p></p>
+  
+    <span>Address</span><br>
+    <input type="text" class= "widthInput" placeholder="Enter your address" (input)="address = $event.target.value" value={{address}}><br>
+    <p>{{id}}</p>
+  
+    <button class="button button2" (click)="create()">{{titleButton}}</button>
+    <button class="button button3" (click)="cancelEdit()" >{{titleCancelEdit}}</button>
+  </div>
+  
+  <div >
+    <table class="table table-striped table-responsive-md btn-table">
+      <thead>
+        <th class = "padding30">User Name</th>
+        <th class = "padding30">Phone Number</th>
+        <th class = "padding30">Address</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let policy of policies">
+    
+          <td class = "padding30">{{policy.policyUserName}}</td>
+          <td class = "padding30">{{policy.policyNumber}}</td>
+          <td class = "padding30">{{policy.policyAddress}}</td>
+          <td>
+              <button class="button button3" (click)="delete(policy.id)">Delete</button>
+              <button class="button button1" (click)="edit(policy.id, policy.policyUserName, policy.policyNumber, policy.policyAddress)">Edit</button>
+            </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
